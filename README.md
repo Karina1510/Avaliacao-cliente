@@ -30,7 +30,7 @@ Um event listener monitora os cliques nas estrelas, e o script, através do id d
 
 🛠️ Como Usar
 Clone este repositório para o seu ambiente local.
-git clone https://github.com/seu-usuario/seu-repositorio
+git clone https://github.com/Karina1510/Avaliacao-cliente.git
 
 Abra o git hub pages  para visualizar o projeto.
 
