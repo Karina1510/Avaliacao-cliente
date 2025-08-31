@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="avaliação de cliente">
+        <meta name="keywords" content="avaliação, cliente, pizza">
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" href="img/icons8-pizza-50.png" type="image/x-icon">
+        <title>Avaliação das pizzas</title>
+
+        <script src="https://kit.fontawesome.com/5f0d2fae4b.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+   <body>
+    <a href="https://www.instagram.com/sangennaropizzas" target="_blank">
+        <img src="img/insta.webp" alt="Instagram da pizzaria">
+    </a>
+    <div class="wrapper">
+        <div class="content">
+            <div class="outer">
+                <div class="emojis">
+                    <img id="emoji-img" src="img/pizza.webp" alt="emoji bom">
+                </div>
+            </div>
+        </div>
+        <div class="stars">
+            <input type="radio" name="rate" id="star-1">
+            <label for="star-1"><i class="fa-solid fa-star"></i></label>
+            <input type="radio" name="rate" id="star-2">
+            <label for="star-2"><i class="fa-solid fa-star"></i></label>
+            <input type="radio" name="rate" id="star-3">
+            <label for="star-3"><i class="fa-solid fa-star"></i></label>
+            <input type="radio" name="rate" id="star-4">
+            <label for="star-4"><i class="fa-solid fa-star"></i></label>
+            <input type="radio" name="rate" id="star-5">
+            <label for="star-5"><i class="fa-solid fa-star"></i></label>
+        </div>
+        <div class="footer">
+            <span id="feedback-text">Avalie a nossa pizza!</span>
+        </div>
+    </div>
+    
+    <script>
+        const stars = document.querySelectorAll('.stars input'); // o comando document.querySelectorAll acha os inputs da lista stars e organiza em uma lista//
+        const feedbackText = document.getElementById('feedback-text'); // muda conforme a estrela o texto, do pior ao melhor//
+        const emojiImg = document.getElementById('emoji-img'); // muda a imagem da pior a melhor
+
+        const feedbackMessages = { // armazena em uma variável os comentários conforme a avaliação//
+            'star-5': 'Odiei a pizza...',
+            'star-4': 'Não foi muito boa.',
+            'star-3': 'A pizza foi ok.',
+            'star-2': 'Gostei bastante!',
+            'star-1': 'Eu amei a pizza!'
+        };
+        
+        const emojiImages = {  // armazena em uma variável as imagens conforme a avaliação//
+            'star-5': 'img/bravo.webp', 
+            'star-4': 'img/regular.png',
+            'star-3': 'img/bom.png',
+            'star-2': 'img/feliz.png',
+            'star-1': 'img/delicioso.png'
+        };
+
+        stars.forEach(star => {
+            star.addEventListener('change', () => { // toda vez que mudar a estrela o comando "escuta" ve que mudou e muda change, faz a mudança a partir do id//
+                const starId = star.id; 
+                feedbackText.textContent = feedbackMessages[starId];
+                emojiImg.src = emojiImages[starId];
+            });
+        });
+    </script>
+    
+</body>
+</html>
